@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saga Souls List</title>
+    <!-- Enlace al archivo de estilos de Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-blue-100">
+    <!--- Navbar --->
+    <nav class="bg-red-500 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-black font-bold text-xl">Saga Souls List</h1>
+        <ul class="flex space-x-4">
+          <li>
+            <a href="#" class="text-black hover:text-gray-200">Acerca de</a>
+          </li>
+          <li>
+            <a href="#" class="text-black hover:text-gray-200">Contacto</a>
+          </li>
+          <li><a href="#" class="text-black hover:text-gray-200">Inicio</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-4">Lista Saga Souls</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-red-600">
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">Año</th>
+            <th class="border border-gray-300 px-4 py-2">Company</th>
+            <th class="border border-gray-300 px-4 py-2">Goty</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for piloto in pilotos %}
+          <tr class="bg-white">
+            <td class="border border-gray-300 px-4 py-2">
+              {{ sagasouls.name }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ sagasouls.año }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ sagasouls.company }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {% if sagasouls.Goty %}Yes{% else %}No{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-4">Lista de Directores</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-red-600">
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">Country</th>
+            <th class="border border-gray-300 px-4 py-2">Company</th>
+            <th class="border border-gray-300 px-4 py-2">GOTY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for director in directors %}
+          <tr class="bg-white">
+            <td class="border border-gray-300 px-4 py-2">
+              {{ director.name }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ director.country }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ director.company }}
+            </td>
+            <td class="border border-gray-300 px-4 py-2">
+              {% if director.GOTY %}Yes{% else %}No{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-4">Generos</h1>
+      <table class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-red-600">
+            <th class="border border-gray-300 px-4 py-2">Name</th>
+            <th class="border border-gray-300 px-4 py-2">Subgenero</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for genero in genero %}
+          <tr class="bg-white">
+            <td class="border border-gray-300 px-4 py-2">{{ genero.name }}</td>
+            <td class="border border-gray-300 px-4 py-2">
+              {{ genero.subgenero }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
